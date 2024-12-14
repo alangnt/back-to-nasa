@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>NASA | Gallery</title>
+    <title>Hubble’s Stunning New Images of Deep Space</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            background: url('../assets/background.gif') repeat;
+            background: url('../../assets/background.gif') repeat;
             color: white;
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
@@ -46,23 +46,6 @@
             border-left: 2px solid #707070;
             box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #707070;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .img-container {
-            height: 400px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .img-container:hover {
-            scale: 1.05;
-        }
-        .img-container img {
-            width: 100%;
-            object-fit: cover;
-        }
         footer {
             font-weight: bolder;
         }
@@ -75,40 +58,33 @@
                 width: 100%;
                 margin: 0;
             }
-            .img-container {
-                width: 100%;
-                height: 100px;
-            }
         }
     </style>
 </head>
 <body>
+
+<!-- Back button -->
 <header>
     <a href="#"><button class="retro-button">< Go back</button></a>
 </header>
-<img src="../assets/gallery.gif" alt="counter gif">
+
+<!-- Logo -->
+<img src="../../assets/satellite.gif" alt="satellite gif">
+
+<!-- Article container -->
 <main class="container">
-    <h1>NASA Gallery: We are not hiding anything</h1>
-    <div class="gallery">
-        <div class="img-container">
-            <img src="/assets/gallery/ufo.webp" alt="ufo img">
-        </div>
-        <div class="img-container">
-            <img src="/assets/gallery/pyramids.jpg" alt="ufo img">
-        </div>
-        <div class="img-container">
-            <img src="/assets/gallery/moon.jpg" alt="ufo img">
-        </div>
-        <div class="img-container">
-            <img src="/assets/gallery/tesla.jpeg" alt="ufo img">
-        </div>
-        <div class="img-container">
-            <img src="/assets/gallery/flat-earth.webp" alt="ufo img">
-        </div>
-        <div class="img-container">
-            <img src="/assets/gallery/spaceship.jpeg" alt="ufo img">
-        </div>
-    </div>
+    <h1>Hubble’s Stunning New Images of Deep Space</h1>
+    <article>
+        <p>
+            Launched in 1990, the Hubble Space Telescope continues to amaze humanity with its unmatched views of the universe. Now equipped with the Wide Field and Planetary Camera 2, Hubble has revealed new galaxies, sparkling nebulae, and star clusters billions of light-years away.
+        </p>
+        <p>
+            Among the latest discoveries is the “Pillars of Creation” within the Eagle Nebula, a breathtaking region where stars are born. These images have not only advanced science but also inspired art, music, and dreams of what lies beyond.
+        </p>
+        <p>
+            "Hubble has given humanity a lens into eternity," a NASA astronomer remarks. The universe, vast and enigmatic, has never felt closer. As Hubble peers deeper into the cosmos, it reminds us that our quest for knowledge is infinite.
+        </p>
+    </article>
 </main>
 
 <!-- Footer -->

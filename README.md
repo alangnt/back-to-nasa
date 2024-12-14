@@ -37,7 +37,7 @@
 ---
 
 ## 📸 Demo  
-[Live demo](https://back-to-the-nasa.vercel.app/)
+[Live demo](https://backtonasa.live/)
 
 ---
 

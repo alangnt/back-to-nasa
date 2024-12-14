@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background: url('../assets/background.gif') repeat;
+            color: white;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: black;
+            border: 5px solid yellow;
+            padding: 10px;
+        }
+        button {
+            color: black;
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #d0d0d0;
+            border-top: 2px solid white;
+            border-left: 2px solid white;
+            border-right: 2px solid #707070;
+            border-bottom: 2px solid #707070;
+            box-shadow: inset -1px -1px 0 #707070, inset 1px 1px 0 #ffffff;
+            transform: translateY(2px);
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        button:active {
+            background-color: #e0e0e0;
+            border: 2px solid #000;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            border-top: 2px solid #707070;
+            border-left: 2px solid #707070;
+            box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #707070;
+        }
+        footer a {
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="#"><button class="retro-button">< Go back</button></a>
+</header>
+<img src="../assets/satellite.gif" alt="satellite gif">
+<main class="container">
+    <h1>Hubble’s Stunning New Images of Deep Space</h1>
+    <article>
+        <p>
+            Launched in 1990, the Hubble Space Telescope continues to amaze humanity with its unmatched views of the universe. Now equipped with the Wide Field and Planetary Camera 2, Hubble has revealed new galaxies, sparkling nebulae, and star clusters billions of light-years away.
+        </p>
+        <p>
+            Among the latest discoveries is the “Pillars of Creation” within the Eagle Nebula, a breathtaking region where stars are born. These images have not only advanced science but also inspired art, music, and dreams of what lies beyond.
+        </p>
+        <p>
+            "Hubble has given humanity a lens into eternity," a NASA astronomer remarks. The universe, vast and enigmatic, has never felt closer. As Hubble peers deeper into the cosmos, it reminds us that our quest for knowledge is infinite.
+        </p>
+    </article>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 1999 NASA | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    <p>Website powered by <strong>HTML 4.01</strong> and best viewed on <em>Netscape Navigator</em>.</p>
+</footer>
+<script>
+    // Select all buttons with the class 'retro-button'
+    const buttons = document.querySelectorAll('.retro-button');
+    const clickSound = new Audio('../assets/sounds/click.mp3');
+
+    // Click event listener to each button
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Rewind and play the sound on click
+            clickSound.currentTime = 0;
+            clickSound.play();
+
+            setInterval(() => {
+                window.location.href = "/";
+            }, 1000);
+        });
+    });
+</script>
+</body>
+</html>

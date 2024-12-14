@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background: url('../assets/background.gif') repeat;
+            color: white;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: black;
+            border: 5px solid yellow;
+            padding: 10px;
+        }
+        button {
+            color: black;
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #d0d0d0;
+            border-top: 2px solid white;
+            border-left: 2px solid white;
+            border-right: 2px solid #707070;
+            border-bottom: 2px solid #707070;
+            box-shadow: inset -1px -1px 0 #707070, inset 1px 1px 0 #ffffff;
+            transform: translateY(2px);
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        button:active {
+            background-color: #e0e0e0;
+            border: 2px solid #000;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            border-top: 2px solid #707070;
+            border-left: 2px solid #707070;
+            box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #707070;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .img-container {
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .img-container:hover {
+            scale: 1.05;
+        }
+        .img-container img {
+            width: 100%;
+            object-fit: cover;
+        }
+        footer a {
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="#"><button class="retro-button">< Go back</button></a>
+</header>
+<img src="../assets/gallery.gif" alt="counter gif">
+<main class="container">
+    <h1>NASA Gallery: We are not hiding anything</h1>
+    <div class="gallery">
+        <div class="img-container">
+            <img src="/assets/gallery/ufo.webp" alt="ufo img">
+        </div>
+        <div class="img-container">
+            <img src="/assets/gallery/pyramids.jpg" alt="ufo img">
+        </div>
+        <div class="img-container">
+            <img src="/assets/gallery/moon.jpg" alt="ufo img">
+        </div>
+        <div class="img-container">
+            <img src="/assets/gallery/tesla.jpeg" alt="ufo img">
+        </div>
+        <div class="img-container">
+            <img src="/assets/gallery/flat-earth.webp" alt="ufo img">
+        </div>
+        <div class="img-container">
+            <img src="/assets/gallery/spaceship.jpeg" alt="ufo img">
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 1999 NASA | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    <p>Website powered by <strong>HTML 4.01</strong> and best viewed on <em>Netscape Navigator</em>.</p>
+</footer>
+<script>
+    // Select all buttons with the class 'retro-button'
+    const buttons = document.querySelectorAll('.retro-button');
+    const clickSound = new Audio('../assets/sounds/click.mp3');
+
+    // Click event listener to each button
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Rewind and play the sound on click
+            clickSound.currentTime = 0;
+            clickSound.play();
+
+            setInterval(() => {
+                window.location.href = "/";
+            }, 1000);
+        });
+    });
+</script>
+</body>
+</html>

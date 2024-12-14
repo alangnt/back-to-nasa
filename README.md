@@ -7,8 +7,8 @@
 
 ## Links
 - [Codédex post](https://www.codedex.io/community/hackathon/xTfkPr7gmxyywC6Z1VW1)
-- [Youtube video](https://youtu.be/aE_K-IoB81Y)
-- LinkedIn post : Coming soon
+- [YouTube video](https://youtu.be/aE_K-IoB81Y)
+- [LinkedIn video](https://www.linkedin.com/feed/update/urn:li:activity:7273735904807043072/)
 - [TikTok video](https://www.tiktok.com/@alangnt7/video/7448263250027793696)
 
 ---

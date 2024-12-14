@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Comment = require('../models/Comment');
 
 // MongoDB URI
@@ -27,7 +26,9 @@ module.exports = (req, res) => {
         newComment.save()
             .then(() => {
                 console.log('Comment saved to database');
-                res.redirect('/');  // Redirect to the homepage after saving
+                // Redirect to the homepage (or any desired page)
+                res.writeHead(302, { Location: '/' });
+                res.end(); // End the response
             })
             .catch((err) => {
                 console.error('Error saving comment', err);

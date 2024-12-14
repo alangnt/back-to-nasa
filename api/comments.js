@@ -4,37 +4,46 @@ const Comment = require('../models/Comment');
 // MongoDB URI
 const mongoURI = process.env.MONGODB_URI;
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch((err) => {
-        console.error('Error connecting to MongoDB', err);
-    });
+// Avoid reconnecting on every function call
+let isConnected = false;
 
-module.exports = (req, res) => {
-    if (req.method === 'POST') {
-        const { name, comment } = req.body;
-
-        // Create a new comment document
-        const newComment = new Comment({
-            name: name,
-            comment: comment,
+const connectToDatabase = async () => {
+    if (!isConnected) {
+        await mongoose.connect(mongoURI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
         });
+        isConnected = true;
+        console.log('Connected to MongoDB');
+    }
+};
 
-        // Save the comment to MongoDB
-        newComment.save()
-            .then(() => {
-                console.log('Comment saved to database');
-                // Redirect to the homepage (or any desired page)
-                res.writeHead(302, { Location: '/' });
-                res.end(); // End the response
-            })
-            .catch((err) => {
-                console.error('Error saving comment', err);
-                res.status(500).send('Server error');
+// Export the serverless function
+module.exports = async (req, res) => {
+    try {
+        // Ensure database connection
+        await connectToDatabase();
+
+        if (req.method === 'POST') {
+            const { name, comment } = req.body;
+
+            const newComment = new Comment({
+                name: name,
+                comment: comment,
             });
-    } else {
-        res.status(405).send('Method Not Allowed');
+
+            // Save to MongoDB
+            await newComment.save();
+
+            console.log('Comment saved to database');
+            // Redirect after saving
+            res.writeHead(302, { Location: '/' });
+            res.end();
+        } else {
+            res.status(405).send('Method Not Allowed');
+        }
+    } catch (err) {
+        console.error('Error in function', err);
+        res.status(500).send('Internal Server Error');
     }
 };

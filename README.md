@@ -5,6 +5,14 @@
 
 ---
 
+## Links
+- [Codédex post](https://www.codedex.io/community/hackathon/xTfkPr7gmxyywC6Z1VW1)
+- [Youtube video](https://youtu.be/aE_K-IoB81Y)
+- LinkedIn post : Coming soon
+- [TikTok video](https://www.tiktok.com/@alangnt7/video/7448263250027793696)
+
+---
+
 ## 🌌 Features  
 1. **Retro Design**:  
    - Courier New, marquee text, neon colors, and tiled backgrounds!  
@@ -29,7 +37,7 @@
 ---
 
 ## 📸 Demo  
-[Watch Demo Video Here](#)  
+[Live demo](https://back-to-the-nasa.vercel.app/)
 
 ---
 
@@ -39,3 +47,9 @@
 - JavaScript
 - Node.js
 - MongoDB
+
+---
+
+## 📖 References
+- Youtube video - Back to the Future scene : https://www.youtube.com/watch?v=QyrV3UbSdDQ
+- Website - Minigame sound : https://www.youtube.com/watch?v=urPoCm28XHw
